@@ -18,4 +18,17 @@ public class CabInvoiceGenerator {
 		}
 		return totalFare;
 	}
+
+	public int getNumberOfRides(Ride[] rides) {
+		return rides.length;
+	}
+
+	public double calculateAverageRideCost(Ride[] rides) {
+		double totalFare = 0;
+		for (Ride ride : rides) {
+			totalFare += calculateFare(ride.getDistance(), ride.getTime());
+		}
+
+		return totalFare / rides.length;
+	}
 }
